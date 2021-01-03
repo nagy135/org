@@ -1,15 +1,15 @@
 #+TITLE: Resolutions
 
 * WORKOUT
-** days
+** DAYS
 *** TODO PUSH day
 SCHEDULED: <2021-01-04 Mon +4d>
 *** TODO PULL day
 SCHEDULED: <2021-01-05 Tue +4d>
 *** TODO LEG day
 SCHEDULED: <2021-01-06 Wed +4d>
-** abs
-*** TODO every even numbered day in year
+** ABS
+*** TODO abs every even numbered day in year
 SCHEDULED: <2021-01-04 Mon +2d>
 
 * BOOKS
@@ -44,4 +44,8 @@ SCHEDULED: <2021-01-04 Mon +1d>
 
 * GUITAR
 ** TODO guitar 10 minutes a day
-SCHEDULED: <2021-01-03 Sun +1d>
+SCHEDULED: <2021-01-04 Mon +1d>
+:PROPERTIES:
+:LAST_REPEAT: [2021-01-03 Sun 21:36]
+:END:
+- State "DONE"       from "TODO"       [2021-01-03 Sun 21:36]

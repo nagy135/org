@@ -11,6 +11,7 @@ SCHEDULED: <2021-01-06 Wed +4d>
 ** abs
 *** TODO every even numbered day in year
 SCHEDULED: <2021-01-04 Mon +2d>
+
 * BOOKS
 ** TODO read 20 pages a day
 SCHEDULED: <2021-01-04 Mon +1d>
@@ -18,6 +19,7 @@ SCHEDULED: <2021-01-04 Mon +1d>
 :LAST_REPEAT: [2021-01-03 Sun 16:02]
 :END:
 - State "DONE"       from "TODO"       [2021-01-03 Sun 16:02]
+
 * CODING
 ** TODO commit every day
 SCHEDULED: <2021-01-04 Mon +1d>
@@ -27,9 +29,11 @@ SCHEDULED: <2021-01-04 Mon +1d>
 - State "DONE"       from "TODO"       [2021-01-03 Sun 16:27]
 ** TODO release production every 3 months
 SCHEDULED: <2021-03-31 Wed +3m>
+
 * FOOD
 ** 18/6 fasting/feasting split
 ** 2900 + 300-400
+
 * MEDITATION
 ** TODO meditation 10 minutes a day
 SCHEDULED: <2021-01-04 Mon +1d>
@@ -37,6 +41,7 @@ SCHEDULED: <2021-01-04 Mon +1d>
 :LAST_REPEAT: [2021-01-03 Sun 16:11]
 :END:
 - State "DONE"       from "TODO"       [2021-01-03 Sun 16:11]
+
 * GUITAR
 ** TODO guitar 10 minutes a day
 SCHEDULED: <2021-01-03 Sun +1d>

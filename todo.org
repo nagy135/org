@@ -1,0 +1,4 @@
+* Inbox
+** [ ] test
+
+[[file:~/.doom.d/config.el::;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-]]

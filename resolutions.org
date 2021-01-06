@@ -1,51 +1,54 @@
 #+TITLE: Resolutions
 
 * WORKOUT
-** DAYS
-*** TODO PUSH day
-SCHEDULED: <2021-01-04 Mon +4d>
-*** TODO PULL day
-SCHEDULED: <2021-01-05 Tue +4d>
-*** TODO LEG day
-SCHEDULED: <2021-01-06 Wed +4d>
-** ABS
-*** TODO abs every even numbered day in year
-SCHEDULED: <2021-01-04 Mon +2d>
-
+** TODO PUSH day
+   SCHEDULED: <2021-01-07 Thu ++4d>
+** TODO PULL day
+   SCHEDULED: <2021-01-08 Fri ++4d>
+** TODO LEG day
+   SCHEDULED: <2021-01-09 Sat ++4d>
+** TODO abs every even numbered day in year
+   SCHEDULED: <2021-01-06 Wed ++2d>
+   :PROPERTIES:
+   :LAST_REPEAT: [2021-01-04 Mon 20:41]
+   :END:
+   - State "DONE"       from "TODO"       [2021-01-04 Mon 20:41]
 * BOOKS
 ** TODO read 20 pages a day
-SCHEDULED: <2021-01-04 Mon +1d>
-:PROPERTIES:
-:LAST_REPEAT: [2021-01-03 Sun 16:02]
-:END:
-- State "DONE"       from "TODO"       [2021-01-03 Sun 16:02]
-
+   SCHEDULED: <2021-01-06 Wed ++1d>
+   :PROPERTIES:
+   :LAST_REPEAT: [2021-01-05 Tue 21:27]
+   :END:
+   - State "DONE"       from "TODO"       [2021-01-05 Tue 21:27]
+   - State "DONE"       from "TODO"       [2021-01-04 Mon 20:43]
 * CODING
-** TODO commit every day
-SCHEDULED: <2021-01-04 Mon +1d>
-:PROPERTIES:
-:LAST_REPEAT: [2021-01-03 Sun 16:27]
-:END:
-- State "DONE"       from "TODO"       [2021-01-03 Sun 16:27]
+** TODO commit a day
+   SCHEDULED: <2021-01-07 Thu ++1d>
+   :PROPERTIES:
+   :LAST_REPEAT: [2021-01-06 Wed 18:28]
+   :END:
+   - State "DONE"       from "TODO"       [2021-01-06 Wed 18:28]
+   - State "DONE"       from "TODO"       [2021-01-05 Tue 21:27]
+   - State "DONE"       from "TODO"       [2021-01-04 Mon 20:43]
 ** TODO release production every 3 months
-SCHEDULED: <2021-03-31 Wed +3m>
-
+   SCHEDULED: <2021-04-01 Thu ++3m>
 * FOOD
 ** 18/6 fasting/feasting split
-** 2900 + 300-400
-
+** 2900  300-400
 * MEDITATION
-** TODO meditation 10 minutes a day
-SCHEDULED: <2021-01-04 Mon +1d>
-:PROPERTIES:
-:LAST_REPEAT: [2021-01-03 Sun 16:11]
-:END:
-- State "DONE"       from "TODO"       [2021-01-03 Sun 16:11]
-
+** TODO meditate 10 minutes a day
+   SCHEDULED: <2021-01-06 Wed ++1d>
+   :PROPERTIES:
+   :LAST_REPEAT: [2021-01-05 Tue 21:27]
+   :END:
+   - State "DONE"       from "TODO"       [2021-01-05 Tue 21:27]
+   - State "DONE"       from "TODO"       [2021-01-04 Mon 20:41]
 * GUITAR
 ** TODO guitar 10 minutes a day
-SCHEDULED: <2021-01-04 Mon +1d>
-:PROPERTIES:
-:LAST_REPEAT: [2021-01-03 Sun 21:36]
-:END:
-- State "DONE"       from "TODO"       [2021-01-03 Sun 21:36]
+   SCHEDULED: <2021-01-07 Thu ++1d>
+   :PROPERTIES:
+   :LAST_REPEAT: [2021-01-06 Wed 08:02]
+   :END:
+   - State "DONE"       from "TODO"       [2021-01-06 Wed 08:02]
+   - State "DONE"       from "TODO"       [2021-01-05 Tue 17:57]
+   - State "DONE"       from "TODO"       [2021-01-04 Mon 20:41]

@@ -1,4 +1,4 @@
-#+TITLE: Config
++TITLE: Config
 #+PROPERTY: header-args :tangle ~/.doom.d/config.el
 
 * Credentials
@@ -32,8 +32,16 @@
 
 #+begin_src emacs-lisp
 
+;; relative number lines
 (setq display-line-numbers-type 'relative)
 
+;; dont ask if really close
+(setq confirm-kill-emacs nil)
+
+;; add missing symbols that are part of word
+(modify-syntax-entry ?_ "w")
+(modify-syntax-entry ?- "w")
+(modify-syntax-entry ?. "w")
 #+end_src
 
 * My functions
@@ -42,25 +50,32 @@ Deletes function name with its braces () during function call
 
 #+begin_src emacs-lisp
 
-;;
-;; peternormal(palo/lalo(feri.lel(), jozi-lol(trulo_hah()), jurajSasdsa()))
-;;
-
 (defun delete-function-under-cursor ()
   "Deletes function name and its brackets"
-  (progn
-    (setq character (string (char-after)))
-    (let ((i 1)
-          (sum 0))
-      (while (<= i 100)
-        (setq sum (+ sum i))
-        ;; (evil-backward-char)
-        (setq character "l")
-        (setq i (+ i 2)))
-      sum)
+  (setq character (string (char-after)))
+  (let ((i 1))
+    (evil-backward-word-begin)
+    (kill-word 1)
+    (delete-char 1)
+    (while (or
+            (not (zerop i))
+            (equal (+ 1 (point)) (point-at-eol)))
+      (setq character (string (char-after)))
+      (when (equal "(" character) (setq i (+ i 1)) )
+      (when (equal ")" character) (setq i (- i 1)) )
+      (evil-forward-char)
+      )
+    (when (not (equal (+ 1 (point)) (point-at-eol)))
+      (evil-backward-char)
+      (delete-char 1)
+      )
     )
   )
+
 #+end_src
+
+#+RESULTS:
+: delete-function-under-cursor
 
 * Plugin setup
 ** Org mode
@@ -71,7 +86,7 @@ Deletes function name with its braces () during function call
 #+end_src
 
 *** Org Todo
-**** Statuses
+**** Hook
 
 #+begin_src emacs-lisp
 
@@ -84,14 +99,10 @@ Deletes function name with its braces () during function call
      ("INPROGRESS" :foreground "#0098dd" :weight normal :underline t)
      ("DONE" :foreground "#50a14f" :weight normal :underline t)
      ("CANCELLED" :foreground "#ff6480" :weight normal :underline t))
-   ))
+   )
 
-#+end_src
-
-**** Level fontfaces
-#+begin_src emacs-lisp
-
-(dolist (face '((org-level-1 . 1.2)
+  ;; Sizes of levels
+  (dolist (face '((org-level-1 . 1.2)
                   (org-level-2 . 1.1)
                   (org-level-3 . 1.05)
                   (org-level-4 . 1.0)
@@ -100,6 +111,7 @@ Deletes function name with its braces () during function call
                   (org-level-7 . 1.1)
                   (org-level-8 . 1.1)))
     (set-face-attribute (car face) nil :font "League Mono" :weight 'regular :height (cdr face)))
+  )
 
 #+end_src
 
@@ -113,6 +125,13 @@ Deletes function name with its braces () during function call
 (global-set-key (kbd "C-c a") #'org-agenda-list)
 
 #+end_src
+**** Settings
+
+#+begin_src emacs-lisp
+
+(setq org-agenda-start-with-log-mode t)
+
+#+end_src
 
 *** Org bullets
 
@@ -120,6 +139,7 @@ Deletes function name with its braces () during function call
 
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+(setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
 
 #+end_src
 

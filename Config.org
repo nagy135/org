@@ -15,8 +15,8 @@
 
 #+begin_src emacs-lisp
 
-(setq doom-font (font-spec :family "League Mono" :size 18)
-      doom-variable-pitch-font (font-spec :family "League Mono" :size 18))
+(setq doom-font (font-spec :family "MesloLGS NF" :size 18)
+      doom-variable-pitch-font (font-spec :family "MesloLGS NF" :size 18))
 
 #+end_src
 
@@ -231,6 +231,36 @@ Deletes function name with its braces () during function call
 
 #+end_src
 
+** mu4e
+
+#+begin_src emacs-lisp
+
+(use-package mu4e
+  :ensure nil
+  ;; :load-path "/usr/share/emacs/site-lisp/mu4e/"
+  ;; :defer 20 ; Wait until 20 seconds after startup
+  :config
+
+  ;; This is set to 't' to avoid mail syncing issues when using mbsync
+  (setq mu4e-change-filenames-when-moving t)
+
+  ;; Refresh mail using isync every 10 minutes
+  (setq mu4e-update-interval (* 10 60))
+  (setq mu4e-get-mail-command "mbsync -a")
+  (setq mu4e-maildir "~/Mail")
+
+  (setq mu4e-drafts-folder "/[Gmail]/Drafts")
+  (setq mu4e-sent-folder   "/[Gmail]/Sent Mail")
+  (setq mu4e-refile-folder "/[Gmail]/All Mail")
+  (setq mu4e-trash-folder  "/[Gmail]/Trash")
+
+  (setq mu4e-maildir-shortcuts
+      '(("/Inbox"             . ?i)
+        ("/[Gmail]/Sent Mail" . ?s)
+        ("/[Gmail]/Trash"     . ?t)
+        ("/[Gmail]/Drafts"    . ?d)
+        ("/[Gmail]/All Mail"  . ?a))))
+#+end_src
 
 * Coding lang setup
 ** PHP

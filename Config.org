@@ -24,7 +24,7 @@
 
 #+begin_src emacs-lisp
 
-(setq doom-theme 'doom-moonlight)
+(setq doom-theme 'doom-one)
 
 #+end_src
 
@@ -73,9 +73,6 @@ Deletes function name with its braces () during function call
 (global-set-key (kbd "C-x C-j") ( lambda () (interactive) (delete-funtion-under-cursor)))
 #+end_src
 
-#+RESULTS:
-| lambda | nil | (interactive) | (delete-funtion-under-cursor) |
-
 * Plugin setup
 ** Org mode
 #+begin_src emacs-lisp
@@ -121,7 +118,7 @@ Deletes function name with its braces () during function call
 **** Extra bindings
 #+begin_src emacs-lisp
 
-(global-set-key (kbd "C-c a") #'org-agenda-list)
+(map! :desc "org agenda list" :leader "a" #'org-agenda-list)
 
 #+end_src
 **** Settings
@@ -182,8 +179,9 @@ Deletes function name with its braces () during function call
 (evil-snipe-override-mode +1)
 
 #+end_src
+
 ** Dired
-*** H/L directory movement
+*** Settings
 
 #+begin_src emacs-lisp
 
@@ -191,8 +189,23 @@ Deletes function name with its braces () during function call
   :ensure nil
   :config
   (evil-collection-define-key 'normal 'dired-mode-map
+    ;; H/L directory movement
     "h" 'dired-up-directory
     "l" 'dired-find-file))
+
+#+end_src
+
+*** Jumps to specific files
+
+#+begin_src emacs-lisp
+
+(map! :leader
+      (:prefix-map ("d" . "dired")
+       :desc "home" "h" (lambda () (interactive) (find-file "~"))
+       :desc "org" "o" (lambda () (interactive) (find-file "~/org"))
+       :desc "downloads" "d" (lambda () (interactive) (find-file "~/Downloads"))
+       :desc "tabs" "t" (lambda () (interactive) (find-file "~/Documents/Tabs"))
+       :desc "clones" "c" (lambda () (interactive) (find-file "~/Clones"))))
 
 #+end_src
 
@@ -212,12 +225,12 @@ Deletes function name with its braces () during function call
 
 (use-package dired-hide-dotfiles
   :ensure nil
-  :hook (dired-mode . dired-hide-dotfiles-mode)
   :config
   (evil-collection-define-key 'normal 'dired-mode-map
     "H" 'dired-hide-dotfiles-mode))
 
 #+end_src
+
 
 * Coding lang setup
 ** PHP

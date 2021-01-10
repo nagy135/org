@@ -1,0 +1,8 @@
+#+TITLE: Regular
+
+* TODO VikTHOR bars creation (every 8 days)
+SCHEDULED: <2021-01-17 Sun ++8d>
+:PROPERTIES:
+:LAST_REPEAT: [2021-01-09 Sat 19:26]
+:END:
+- State "DONE"       from "TODO"       [2021-01-09 Sat 19:26]

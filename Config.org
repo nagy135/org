@@ -40,8 +40,6 @@
 
 ;; add missing symbols that are part of word
 (modify-syntax-entry ?_ "w")
-(modify-syntax-entry ?- "w")
-(modify-syntax-entry ?. "w")
 #+end_src
 
 * My functions
@@ -72,10 +70,11 @@ Deletes function name with its braces () during function call
     )
   )
 
+(global-set-key (kbd "C-x C-j") ( lambda () (interactive) (delete-funtion-under-cursor)))
 #+end_src
 
 #+RESULTS:
-: delete-function-under-cursor
+| lambda | nil | (interactive) | (delete-funtion-under-cursor) |
 
 * Plugin setup
 ** Org mode
@@ -181,6 +180,42 @@ Deletes function name with its braces () during function call
 (require 'evil-snipe)
 (evil-snipe-mode +1)
 (evil-snipe-override-mode +1)
+
+#+end_src
+** Dired
+*** H/L directory movement
+
+#+begin_src emacs-lisp
+
+(use-package dired
+  :ensure nil
+  :config
+  (evil-collection-define-key 'normal 'dired-mode-map
+    "h" 'dired-up-directory
+    "l" 'dired-find-file))
+
+#+end_src
+
+*** All the icons
+
+#+begin_src emacs-lisp
+
+(use-package all-the-icons-dired
+  :ensure nil
+  :hook (dired-mode . all-the-icons-dired-mode))
+
+#+end_src
+
+*** Hide hidden files
+
+#+begin_src emacs-lisp
+
+(use-package dired-hide-dotfiles
+  :ensure nil
+  :hook (dired-mode . dired-hide-dotfiles-mode)
+  :config
+  (evil-collection-define-key 'normal 'dired-mode-map
+    "H" 'dired-hide-dotfiles-mode))
 
 #+end_src
 

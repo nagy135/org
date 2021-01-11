@@ -8,30 +8,42 @@
 :END:
 - State "DONE"       from "TODO"       [2021-01-09 Sat 19:01]
 ** TODO PULL day
-   SCHEDULED: <2021-01-10 Fri ++4d>
-** TODO LEG day
-   SCHEDULED: <2021-01-11 Sat ++4d>
-** TODO abs every even numbered day in year
-   SCHEDULED: <2021-01-10 Sun ++2d>
+   SCHEDULED: <2021-01-14 Thu ++4d>
    :PROPERTIES:
-   :LAST_REPEAT: [2021-01-09 Sat 15:09]
+   :LAST_REPEAT: [2021-01-10 Sun 18:46]
    :END:
+   - State "DONE"       from "TODO"       [2021-01-10 Sun 18:46]
+** TODO LEG day
+   SCHEDULED: <2021-01-15 Fri ++4d>
+:PROPERTIES:
+:LAST_REPEAT: [2021-01-11 Mon 17:03]
+:END:
+- State "DONE"       from "TODO"       [2021-01-11 Mon 17:03]
+** TODO abs every even numbered day in year
+   SCHEDULED: <2021-01-12 Tue ++2d>
+   :PROPERTIES:
+   :LAST_REPEAT: [2021-01-11 Mon 17:02]
+   :END:
+   - State "CANCELLED"  from "TODO"       [2021-01-11 Mon 17:02]
    - State "CANCELLED"  from "TODO"       [2021-01-09 Sat 15:09]
 * BOOKS
 ** TODO read 20 pages a day
-   SCHEDULED: <2021-01-10 Sun ++1d>
+   SCHEDULED: <2021-01-12 Tue ++1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2021-01-09 Sat 21:00]
+   :LAST_REPEAT: [2021-01-11 Mon 21:14]
    :END:
+   - State "DONE"       from "TODO"       [2021-01-11 Mon 21:14]
+   - State "DONE"       from "TODO"       [2021-01-10 Sun 20:42]
    - State "DONE"       from "TODO"       [2021-01-09 Sat 21:00]
    - State "DONE"       from "TODO"       [2021-01-08 Fri 23:23]
    - State "DONE"       from "TODO"       [2021-01-07 Thu 20:35]
 * CODING
 ** TODO commit a day
-   SCHEDULED: <2021-01-11 Mon ++1d>
+   SCHEDULED: <2021-01-12 Tue ++1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2021-01-10 Sun 13:19]
+   :LAST_REPEAT: [2021-01-11 Mon 19:08]
    :END:
+   - State "DONE"       from "TODO"       [2021-01-11 Mon 19:08]
    - State "DONE"       from "TODO"       [2021-01-10 Sun 13:19]
    - State "DONE"       from "TODO"       [2021-01-09 Sat 15:10]
    - State "DONE"       from "TODO"       [2021-01-08 Fri 16:44]
@@ -45,17 +57,18 @@
 ** TODO meditate 10 minutes a day
    SCHEDULED: <2021-01-11 Mon ++1d>
 :PROPERTIES:
-:LAST_REPEAT: [2021-01-10 Sun 12:23]
+:LAST_REPEAT: [2021-01-10 Sun 21:15]
 :END:
-- State "CANCELLED"  from "TODO"       [2021-01-10 Sun 12:23]
+- State "DONE"       from "TODO"       [2021-01-10 Sun 21:15]
 - State "CANCELLED"  from "TODO"       [2021-01-08 Sat 15:09]
 - State "CANCELLED"  from "TODO"       [2021-01-07 Fri 06:53]
 * GUITAR
 ** TODO guitar 10 minutes a day
-   SCHEDULED: <2021-01-11 Mon ++1d>
+   SCHEDULED: <2021-01-12 Tue ++1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2021-01-10 Sun 12:23]
+   :LAST_REPEAT: [2021-01-11 Mon 19:30]
    :END:
+   - State "DONE"       from "TODO"       [2021-01-11 Mon 19:30]
    - State "DONE"       from "TODO"       [2021-01-10 Sun 12:23]
    - State "DONE"       from "TODO"       [2021-01-09 Sat 17:28]
    - State "DONE"       from "TODO"       [2021-01-08 Fri 06:54]

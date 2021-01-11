@@ -1,1 +1,5 @@
 * Inbox
+** [ ] b in the binding doesnt have :desc
+add Bookmark as a description to it
+
+[[file:~/org/Config.org::*bookmark files][bookmark files]]

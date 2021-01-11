@@ -49,6 +49,16 @@
 (global-set-key (kbd "M-y") 'counsel-yank-pop)
 
 #+end_src
+** bookmark files
+
+#+begin_src emacs-lisp
+
+(map! :desc "Config.org" :leader "fbc"  (lambda () (interactive) (find-file "~/org/Config.org")))
+(map! :desc "config.el" :leader "fbC"  (lambda () (interactive) (find-file "~/.doom.d/config.el")))
+(map! :desc "packages.el" :leader "fbp"  (lambda () (interactive) (find-file "~/.doom.d/packages.el")))
+(map! :desc "todo.org" :leader "fbt"  (lambda () (interactive) (find-file "~/org/todo.org")))
+
+#+end_src
 
 * My functions
 ** Delete function under cursor

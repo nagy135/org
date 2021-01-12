@@ -90,35 +90,28 @@ Deletes function name with its braces () during function call
 
 (global-set-key (kbd "C-x C-j") ( lambda () (interactive) (delete-funtion-under-cursor)))
 #+end_src
+
 ** Tramp environment
 
 #+begin_src emacs-lisp
 
-;; (defvar tramp-environment-s '(("DEVELOP" . "68.183.73.10")
-;;                               ("STAGING" . "192.12.99.23")
-;;                               ("PRODUCTION" . "192.88.44.23")
-;;                               )
-;;   "mapping between environment and ip address")
-
-
-(setq tramp-environment-s '(("DEVELOP" . "68.183.73.10")
-                              ("STAGING" . "192.12.99.23")
-                              ("PRODUCTION" . "192.88.44.23")
-                              ))
+(setq tramp-environment-s '(("matinka-calendar-react" . (
+    ("PRODUCTION" . ("root@68.183.73.10" . "/var/www/matinka-calendar-compose/matinka-calendar-react"))))))
 
 (defun tramp-environment ()
   "Shows selection of environments where open the same file"
   (interactive)
   (when (not (projectile-project-root))
     (error "not in a project"))
-  (let ((choice (ivy-read "Choose environment: " '("DEVELOP" "STAGING" "PRODUCTION"))))
+  (let ((choice (ivy-read "Choose environment: "
+                          (mapcar (lambda (e) (car e))
+                                  (cdr (assoc (projectile-project-name) tramp-environment-s))))))
     (when (stringp choice)
-      (message choice)
-      (let ((ip-address (cdr (car (let ((res ()))
-        (dolist (x tramp-environment-s (nreverse res))
-          (when (and x (string= (car x) choice))
-            (push x res))))))))
-        (find-file (concat "/ssh:root@" ip-address ":/" (substring (buffer-file-name) (length (projectile-project-root)))))))))
+      (let* ((env-data (cdr (assoc choice (cdr (assoc (projectile-project-name) tramp-environment-s)))))
+             (login-data (car env-data))
+             (project-root-path (cdr env-data)))
+        (find-file (concat "/ssh:" login-data "|sudo::" project-root-path "/" (substring (buffer-file-name) (length (projectile-project-root)))))))))
+
 
 (map! :desc "Tramp environment" :leader "pe" #'tramp-environment)
 #+end_src
@@ -164,7 +157,6 @@ Deletes function name with its braces () during function call
 #+RESULTS:
 
 *** Org agenda
-
 **** Extra bindings
 #+begin_src emacs-lisp
 
@@ -305,11 +297,11 @@ Deletes function name with its braces () during function call
   (setq mu4e-trash-folder  "/[Gmail]/Trash")
 
   (setq mu4e-maildir-shortcuts
-      '(("/Inbox"             . ?i)
-        ("/[Gmail]/Sent Mail" . ?s)
-        ("/[Gmail]/Trash"     . ?t)
-        ("/[Gmail]/Drafts"    . ?d)
-        ("/[Gmail]/All Mail"  . ?a))))
+        '(("/Inbox"             . ?i)
+          ("/[Gmail]/Sent Mail" . ?s)
+          ("/[Gmail]/Trash"     . ?t)
+          ("/[Gmail]/Drafts"    . ?d)
+          ("/[Gmail]/All Mail"  . ?a))))
 #+end_src
 
 * Coding lang setup
@@ -363,7 +355,7 @@ Deletes function name with its braces () during function call
 
 #+begin_src emacs-lisp
 
- ;; (define-key global-map (kbd "C-c j")
- ;;    (lambda () (interactive) (org-capture nil "jj")))
+;; (define-key global-map (kbd "C-c j")
+;;    (lambda () (interactive) (org-capture nil "jj")))
 
 #+end_src

@@ -2,10 +2,11 @@
 
 * WORKOUT
 ** TODO PUSH day
-   SCHEDULED: <2021-01-13 Wed ++4d>
+   SCHEDULED: <2021-01-17 Sun ++4d>
 :PROPERTIES:
-:LAST_REPEAT: [2021-01-09 Sat 19:01]
+:LAST_REPEAT: [2021-01-13 Wed 18:37]
 :END:
+- State "DONE"       from "TODO"       [2021-01-13 Wed 18:37]
 - State "DONE"       from "TODO"       [2021-01-09 Sat 19:01]
 ** TODO PULL day
    SCHEDULED: <2021-01-14 Thu ++4d>
@@ -20,18 +21,21 @@
 :END:
 - State "DONE"       from "TODO"       [2021-01-11 Mon 17:03]
 ** TODO abs every even numbered day in year
-   SCHEDULED: <2021-01-12 Tue ++2d>
+   SCHEDULED: <2021-01-14 Thu ++2d>
    :PROPERTIES:
-   :LAST_REPEAT: [2021-01-11 Mon 17:02]
+   :LAST_REPEAT: [2021-01-12 Tue 22:17]
    :END:
+   - State "DONE"       from "TODO"       [2021-01-12 Tue 22:17]
    - State "CANCELLED"  from "TODO"       [2021-01-11 Mon 17:02]
    - State "CANCELLED"  from "TODO"       [2021-01-09 Sat 15:09]
 * BOOKS
 ** TODO read 20 pages a day
-   SCHEDULED: <2021-01-12 Tue ++1d>
+   SCHEDULED: <2021-01-14 Thu ++1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2021-01-11 Mon 21:14]
+   :LAST_REPEAT: [2021-01-13 Wed 21:23]
    :END:
+   - State "DONE"       from "TODO"       [2021-01-13 Wed 21:23]
+   - State "DONE"       from "TODO"       [2021-01-12 Tue 21:39]
    - State "DONE"       from "TODO"       [2021-01-11 Mon 21:14]
    - State "DONE"       from "TODO"       [2021-01-10 Sun 20:42]
    - State "DONE"       from "TODO"       [2021-01-09 Sat 21:00]
@@ -56,20 +60,22 @@
 ** 2900  300-400
 * MEDITATION
 ** TODO meditate 10 minutes a day
-   SCHEDULED: <2021-01-12 Tue ++1d>
+   SCHEDULED: <2021-01-13 Wed ++1d>
 :PROPERTIES:
-:LAST_REPEAT: [2021-01-12 Tue 06:35]
+:LAST_REPEAT: [2021-01-12 Tue 21:39]
 :END:
+- State "CANCELLED"  from "TODO"       [2021-01-12 Tue 21:39]
 - State "DONE"       from "TODO"       [2021-01-11 Mon 16:35]
 - State "DONE"       from "TODO"       [2021-01-10 Sun 21:15]
 - State "CANCELLED"  from "TODO"       [2021-01-08 Sat 15:09]
 - State "CANCELLED"  from "TODO"       [2021-01-07 Fri 06:53]
 * GUITAR
 ** TODO guitar 10 minutes a day
-   SCHEDULED: <2021-01-13 Wed ++1d>
+   SCHEDULED: <2021-01-14 Thu ++1d>
    :PROPERTIES:
-   :LAST_REPEAT: [2021-01-12 Tue 18:50]
+   :LAST_REPEAT: [2021-01-13 Wed 18:37]
    :END:
+   - State "DONE"       from "TODO"       [2021-01-13 Wed 18:37]
    - State "DONE"       from "TODO"       [2021-01-12 Tue 18:50]
    - State "DONE"       from "TODO"       [2021-01-11 Mon 19:30]
    - State "DONE"       from "TODO"       [2021-01-10 Sun 12:23]

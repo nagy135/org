@@ -40,6 +40,8 @@
 
 ;; add missing symbols that are part of word
 (modify-syntax-entry ?_ "w")
+
+(setq redisplay-dont-pause t)
 #+end_src
 
 ** kill-ring
@@ -58,6 +60,12 @@
 (map! :desc "packages.el" :leader "fbp"  (lambda () (interactive) (find-file "~/.doom.d/packages.el")))
 (map! :desc "todo.org" :leader "fbt"  (lambda () (interactive) (find-file "~/org/todo.org")))
 
+#+end_src
+** image-mode
+#+begin_src emacs-lisp
+(add-hook 'image-mode-hook (lambda () (progn
+                                        (local-set-key (kbd "C--") 'image-decrease-size)
+                                        (local-set-key (kbd "C-=") 'image-increase-size))))
 #+end_src
 
 * My functions
@@ -153,8 +161,6 @@ Deletes function name with its braces () during function call
   )
 
 #+end_src
-
-#+RESULTS:
 
 *** Org agenda
 **** Extra bindings
@@ -277,32 +283,39 @@ Deletes function name with its braces () during function call
 
 #+begin_src emacs-lisp
 
-(use-package mu4e
-  :ensure nil
-  ;; :load-path "/usr/share/emacs/site-lisp/mu4e/"
-  ;; :defer 20 ; Wait until 20 seconds after startup
-  :config
+;; (use-package mu4e
+;;   :ensure nil
+;;   ;; :load-path "/usr/share/emacs/site-lisp/mu4e/"
+;;   ;; :defer 20 ; Wait until 20 seconds after startup
+;;   :config
 
-  ;; This is set to 't' to avoid mail syncing issues when using mbsync
-  (setq mu4e-change-filenames-when-moving t)
+;;   ;; This is set to 't' to avoid mail syncing issues when using mbsync
+;;   (setq mu4e-change-filenames-when-moving t)
 
-  ;; Refresh mail using isync every 10 minutes
-  (setq mu4e-update-interval (* 10 60))
-  (setq mu4e-get-mail-command "mbsync -a")
-  (setq mu4e-maildir "~/Mail")
+;;   ;; Refresh mail using isync every 10 minutes
+;;   (setq mu4e-update-interval (* 10 60))
+;;   (setq mu4e-get-mail-command "mbsync -a")
+;;   (setq mu4e-maildir "~/Mail")
 
-  (setq mu4e-drafts-folder "/[Gmail]/Drafts")
-  (setq mu4e-sent-folder   "/[Gmail]/Sent Mail")
-  (setq mu4e-refile-folder "/[Gmail]/All Mail")
-  (setq mu4e-trash-folder  "/[Gmail]/Trash")
+;;   (setq mu4e-drafts-folder "/[Gmail]/Drafts")
+;;   (setq mu4e-sent-folder   "/[Gmail]/Sent Mail")
+;;   (setq mu4e-refile-folder "/[Gmail]/All Mail")
+;;   (setq mu4e-trash-folder  "/[Gmail]/Trash")
 
-  (setq mu4e-maildir-shortcuts
-        '(("/Inbox"             . ?i)
-          ("/[Gmail]/Sent Mail" . ?s)
-          ("/[Gmail]/Trash"     . ?t)
-          ("/[Gmail]/Drafts"    . ?d)
-          ("/[Gmail]/All Mail"  . ?a))))
+;;   (setq mu4e-maildir-shortcuts
+;;         '(("/Inbox"             . ?i)
+;;           ("/[Gmail]/Sent Mail" . ?s)
+;;           ("/[Gmail]/Trash"     . ?t)
+;;           ("/[Gmail]/Drafts"    . ?d)
+;;           ("/[Gmail]/All Mail"  . ?a))))
 #+end_src
+** eimp
+#+begin_src emacs-lisp
+
+(add-hook 'image-mode-hook 'eimp-mode)
+
+#+end_src
+
 
 * Coding lang setup
 ** PHP
